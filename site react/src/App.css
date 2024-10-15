@@ -14,6 +14,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
@@ -27,19 +28,36 @@ header {
 }
 
 .logo {
-  height: 40px;
-  margin-right: 1rem;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
+.cart-container {
+  display: flex;
+  align-items: center;
+  background-color: #c64271;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: 1rem;
+  cursor: pointer; 
+}
+
+.cart-icon {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.cart-count {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 #cart {
   font-size: 1rem;
-  margin-left: auto;
-  margin-right: 2rem;
+  margin-left: auto; /* Reduzir a margem direita */
 }
 
 #products {
