@@ -80,6 +80,46 @@ header {
   transition: transform 0.2s, box-shadow 0.2s;
   text-align: center; /* Centraliza o conteúdo */
 }
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo-container {
+    margin-bottom: 1rem;
+  }
+
+  .cart-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #products {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cart-icon {
+    font-size: 20px;
+  }
+
+  .cart-count {
+    font-size: 16px;
+  }
+
+  #products {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+}
 
 .product:hover {
   transform: translateY(-5px);
