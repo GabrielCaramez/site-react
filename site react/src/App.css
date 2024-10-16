@@ -1,5 +1,6 @@
+/* Estilos Gerais */
 body {
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,7 +15,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
@@ -37,53 +37,119 @@ header {
   display: flex;
   align-items: center;
   background-color: #c64271;
-  padding: 10px;
+  padding: 10px 15px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-left: auto;
   margin-right: 1rem;
-  cursor: pointer; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-container:hover {
+  background-color: #a8325f;
 }
 
 .cart-icon {
   font-size: 24px;
   margin-right: 5px;
+  color: #fff;
 }
 
 .cart-count {
   font-size: 18px;
   font-weight: bold;
+  color: #fff;
 }
 
-#cart {
-  font-size: 1rem;
-  margin-left: auto; /* Reduzir a margem direita */
+.cart-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 #products {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  padding: 2rem;
   justify-content: center;
   margin-top: 80px; /* Espaço para o header fixo */
+  margin-bottom: 100px; /* Espaço para o footer fixo */
 }
 
-.product {
-  background-color: white;
+.product-item {
+  background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  width: calc(33.333% - 2rem);
-  box-sizing: border-box;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-  text-align: center; /* Centraliza o conteúdo */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+.product-details {
+  padding: 1rem;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: #c64271;
+  margin: 0.5rem 0;
+}
+
+.add-to-cart-button {
+  background-color: #c64271;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #a8325f;
+}
+
+/* Estilos para o Footer */
+footer {
+  background-color: #a8325f;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+/* Media Queries para responsividade */
 @media (max-width: 768px) {
-  .header {
+  header {
     flex-direction: column;
     align-items: flex-start;
+    padding: 1rem;
   }
 
   .logo-container {
@@ -96,8 +162,21 @@ header {
   }
 
   #products {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     padding: 1rem;
     gap: 1rem;
+  }
+
+  .product-name {
+    font-size: 1rem;
+  }
+
+  .product-price {
+    font-size: 0.9rem;
+  }
+
+  .add-to-cart-button {
+    padding: 0.4rem 0.8rem;
   }
 }
 
@@ -116,54 +195,20 @@ header {
   }
 
   #products {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     padding: 0.5rem;
     gap: 0.5rem;
   }
-}
 
-.product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
+  .product-name {
+    font-size: 0.9rem;
+  }
 
-.product-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
+  .product-price {
+    font-size: 0.8rem;
+  }
 
-.product h2 {
-  font-size: 1.25rem;
-  margin: 0 0 0.5rem;
-}
-
-.product p {
-  margin: 0.5rem 0;
-  color: #666;
-}
-
-.product button {
-  background-color: #952054;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.product button:hover {
-  background-color: #c64271;
-}
-
-footer {
-  background-color: #952054;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  .add-to-cart-button {
+    padding: 0.3rem 0.6rem;
+  }
 }
