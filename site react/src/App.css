@@ -66,7 +66,7 @@ header {
   padding: 2rem;
   gap: 1.5rem;
   justify-content: center;
-  margin-top: 80px; /* Espaço para o header fixo */
+  margin-bottom: 80px;
 }
 
 .product {
